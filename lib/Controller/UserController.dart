@@ -13,6 +13,7 @@ class UserController with ChangeNotifier{
       prenom: "prenom",
       postnom: "postnom",
       lieuDeNaissance: "lieuDeNaissance",
+      age: "age",
       sexe: "sexe",
       nomMere: "nomMere",
       nomPere: "nomPere",

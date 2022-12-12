@@ -16,6 +16,7 @@ class UserModel {
     required this.postnom,
     required this.lieuDeNaissance,
     required this.sexe,
+    required this.age,
     required this.nomMere,
     required this.nomPere,
     required this.etatCivil,
@@ -35,6 +36,7 @@ class UserModel {
   String postnom;
   String lieuDeNaissance;
   String sexe;
+  String age;
   String nomMere;
   String nomPere;
   String etatCivil;
@@ -44,8 +46,8 @@ class UserModel {
   String commune;
   String quartier;
   String avenue;
-  dynamic createdAt;
-  dynamic updatedAt;
+  DateTime? createdAt;
+  DateTime? updatedAt;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
     id: json["id"],
@@ -54,6 +56,7 @@ class UserModel {
     postnom: json["postnom"],
     lieuDeNaissance: json["lieu_de_naissance"],
     sexe: json["sexe"],
+    age: json["age"],
     nomMere: json["nom_mere"],
     nomPere: json["nom_pere"],
     etatCivil: json["etat_civil"],
@@ -63,8 +66,8 @@ class UserModel {
     commune: json["commune"],
     quartier: json["quartier"],
     avenue: json["avenue"],
-    createdAt: json["created_at"],
-    updatedAt: json["updated_at"],
+    createdAt: DateTime.parse(json["created_at"]),
+    updatedAt: DateTime.parse(json["updated_at"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -74,6 +77,7 @@ class UserModel {
     "postnom": postnom,
     "lieu_de_naissance": lieuDeNaissance,
     "sexe": sexe,
+    "age": age,
     "nom_mere": nomMere,
     "nom_pere": nomPere,
     "etat_civil": etatCivil,
@@ -83,7 +87,7 @@ class UserModel {
     "commune": commune,
     "quartier": quartier,
     "avenue": avenue,
-    "created_at": createdAt,
-    "updated_at": updatedAt,
+    "created_at": createdAt?.toIso8601String(),
+    "updated_at": updatedAt?.toIso8601String(),
   };
 }

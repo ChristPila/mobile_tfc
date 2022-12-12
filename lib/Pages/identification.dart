@@ -18,6 +18,7 @@ class _IdentificationState extends State<Identification> {
   TextEditingController nom = TextEditingController();
   TextEditingController postnom = TextEditingController();
   TextEditingController prenom = TextEditingController();
+  TextEditingController age = TextEditingController();
   TextEditingController lieu_naiss = TextEditingController();
   TextEditingController nom_pere = TextEditingController();
   TextEditingController nom_mere = TextEditingController();
@@ -278,6 +279,34 @@ class _IdentificationState extends State<Identification> {
       )
     );
   }
+  Widget ageChampSaisie() {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 30),
+      child: TextField(
+        style: TextStyle(
+            color: Colors.blue
+        ),
+        controller: prenom,
+        decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                  width: 3, color: Colors.blue
+              )
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                  width: 3, color: Colors.blue
+              )
+          ),
+          labelStyle: TextStyle(
+              color: Colors.blue
+          ),
+          labelText: "Prénom",
+          filled: false,
+        ),
+      ),
+    );
+  }
   Widget lieuNaissanceChampSaisie() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -285,7 +314,7 @@ class _IdentificationState extends State<Identification> {
         style: TextStyle(
             color: Colors.blue
         ),
-        controller: lieu_naiss,
+        controller: age,
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -486,6 +515,7 @@ class _IdentificationState extends State<Identification> {
               postnom: postnom.text.toString(),
               lieuDeNaissance: lieu_naiss.text.toString(),
               sexe: _selectedSexe.toString(),
+              age: age.toString(),
               nomMere: nom_mere.text.toString(),
               nomPere: nom_pere.text.toString(),
               etatCivil: _selectedState.toString(),
