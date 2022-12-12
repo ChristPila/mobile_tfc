@@ -517,7 +517,7 @@ class _IdentificationState extends State<Identification> {
               postnom: postnom.text.toString(),
               lieuDeNaissance: lieu_naiss.text.toString(),
               sexe: _selectedSexe.toString(),
-              age: age.toString(),
+              age: age.text.toString(),
               nomMere: nom_mere.text.toString(),
               nomPere: nom_pere.text.toString(),
               etatCivil: _selectedState.toString(),
