@@ -62,6 +62,8 @@ class _IdentificationState extends State<Identification> {
               Espace(hauteur: 25),
               lieuNaissanceChampSaisie(),
               Espace(hauteur: 25),
+              ageChampSaisie(),
+              Espace(hauteur: 25),
               stateVue(),
               Espace(hauteur: 25,),
               nomPereChampSaisie(),
